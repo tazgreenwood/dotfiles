@@ -1,0 +1,12 @@
+- clean: ['~']
+
+- link:
+    ~/.config/nvim:
+      create: true
+      path: nvim
+    ~/.zshrc:
+      create: true
+      path: zshrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
