@@ -71,8 +71,10 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    fzf
     git
     z
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,3 +105,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+
+# Work Related Settings Lendio
+export NOVA_USERNAME=$(cat ~/dev/secrets/nova-username)
+export NOVA_PASSWORD=$(cat ~/dev/secrets/nova-password)
+export GITHUB_TOKEN=$(cat ~/dev/docker-secrets/docker-git-token)
+export OAUTH_PRIVATE=$(cat ~/dev/docker-secrets/api-oauth-private.key)
+export OAUTH_PUBLIC=$(cat ~/dev/docker-secrets/api-oauth-public.key)
+export PATH='/Users/tazgreenwood/dev/lendio-infra/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
