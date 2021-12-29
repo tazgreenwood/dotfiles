@@ -50,3 +50,18 @@ map("n", "<Down>", ":resize +1<CR>", {noremap = true, silent = true})
 map("x", "K", ":move '<-2<CR>gv-gv", {noremap = true, silent = true})
 map("x", "J", ":move '>+1<CR>gv-gv", {noremap = true, silent = true})
 
+-- Dap debugging Mappings
+map("n", "<leader>db", ":lua require('dap').toggle_breakpoint()<CR>", {noremap = true, silent = true})
+map("n", "<A-j>", ":lua require('dap').step_over()<CR>", {noremap = true, silent = true})
+map("n", "<A-k>", ":lua require('dap').step_into()<CR>", {noremap = true, silent = true})
+map("n", "<A-l>", ":lua require('dap').step_out()<CR>", {noremap = true, silent = true})
+map("n", "<leader>dn", ":lua require('dap').continue()<CR>", {noremap = true, silent = true})
+map("n", "<leader>d_", ":lua require('dap').run_last()<CR>", {noremap = true, silent = true})
+map("n", "<leader>dr", ":lua require('dap').repl.open()<CR>", {noremap = true, silent = true})
+map("n", "<leader>di", ":lua require('dap.ui.widgets').hover()<CR>", {noremap = true, silent = true})
+map("n", "<leader>d?", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", {noremap = true, silent = true})
+map("n", "<leader>de", ":lua require('dap').set_exception_breakpoints({'all'})<CR>", {noremap = true, silent = true})
+
+-- Dap UI toggle
+map("n", "<leader>du", ":lua require('dapui').toggle()<CR>")
+

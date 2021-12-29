@@ -130,6 +130,19 @@ return require("packer").startup({
             config = get_setup("alpha")
         })
 
+        -- Debug setup
+        use({
+            "mfussenegger/nvim-dap",
+            config = get_setup("nvim-dap")
+        })
+        -- nvim-dap-virtual-text
+        -- nvim-dap-ui
+        use({ 
+            "rcarriga/nvim-dap-ui",
+            requires = {"mfussenegger/nvim-dap"},
+            config = get_setup("dap-ui")
+        })
+
         -- Autocompletion with LSP
         use({
             "hrsh7th/nvim-cmp",
