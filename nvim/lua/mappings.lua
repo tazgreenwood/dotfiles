@@ -65,3 +65,7 @@ map("n", "<leader>de", ":lua require('dap').set_exception_breakpoints({'all'})<C
 -- Dap UI toggle
 map("n", "<leader>du", ":lua require('dapui').toggle()<CR>")
 
+-- Git Mappings
+map("n", "<leader>gg", "<cmd>Neogit<CR>", {noremap = true, silent = true})
+map("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", {noremap = true, silent = true})
+
