@@ -4,6 +4,11 @@
     ~/.config/nvim:
       create: true
       path: nvim
+
+    ~/.config/alacritty:
+      create: true
+      path: alacritty
+
     ~/.zshrc:
       create: true
       path: zshrc
