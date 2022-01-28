@@ -22,4 +22,4 @@ opt.tabstop = 4
 opt.termguicolors = true
 opt.cc = "100"
 opt.wrap = false
-opt.mouse = "a"
+-- opt.mouse = "a"
