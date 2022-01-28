@@ -69,3 +69,6 @@ map("n", "<leader>du", ":lua require('dapui').toggle()<CR>")
 map("n", "<leader>gg", "<cmd>Neogit<CR>", {noremap = true, silent = true})
 map("n", "<leader>gd", "<cmd>DiffviewOpen<CR>", {noremap = true, silent = true})
 
+-- Trouble Mappings
+map("n", "<leader>xx", "<cmd>Trouble<CR>", {noremap = true, silent = true})
+
