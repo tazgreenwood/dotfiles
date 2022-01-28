@@ -106,7 +106,6 @@ return require("packer").startup({
         use({
             "folke/trouble.nvim",
             requires = "kyazdani42/nvim-web-devicons",
-            cmd = {"TroubleToggle", "Trouble"},
             config = get_setup("trouble")
         })
 
