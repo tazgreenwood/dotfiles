@@ -112,4 +112,6 @@ export NOVA_PASSWORD=$(cat ~/dev/secrets/nova-password)
 export GITHUB_TOKEN=$(cat ~/dev/docker-secrets/docker-git-token)
 export OAUTH_PRIVATE=$(cat ~/dev/docker-secrets/api-oauth-private.key)
 export OAUTH_PUBLIC=$(cat ~/dev/docker-secrets/api-oauth-public.key)
+export GOPATH="$HOME/go"
 export PATH='/Users/tazgreenwood/dev/lendio-infra/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+export PATH=$PATH:$GOPATH/bin
