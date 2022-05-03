@@ -33,7 +33,7 @@ return require("packer").startup({
 
         use({ "tanvirtin/monokai.nvim", config = get_setup("monokai") })
 
-        use({ "dracula/vim" })
+        -- use({ "dracula/vim" })
 
         use("p00f/nvim-ts-rainbow")
 
