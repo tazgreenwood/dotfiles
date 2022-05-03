@@ -31,23 +31,28 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
   buf_set_keymap('n', '<space>fm', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-
-
-
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'angularls', 'cssls', 'html', 'eslint', 'sqls', 'tsserver', 'intelephense', 'vuels' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- Setup specific servers with settings
+-- PHP language server setup
+nvim_lsp.intelephense.setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})
+
+-- Vue language server setup
+nvim_lsp.vuels.setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})
+
+-- Vue language server setup
+nvim_lsp.eslint.setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+})
 
 -- Setup diagnostic signs in the gutter
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
