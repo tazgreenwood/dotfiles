@@ -33,7 +33,10 @@ return require("packer").startup({
 
         use({ "tanvirtin/monokai.nvim", config = get_setup("monokai") })
 
+        use({ "dracula/vim" })
+
         use("p00f/nvim-ts-rainbow")
+
         use({
             "nvim-treesitter/nvim-treesitter",
             config = get_setup("treesitter"),
@@ -74,16 +77,15 @@ return require("packer").startup({
         -- requirement for Neogit
         use({
             "sindrets/diffview.nvim",
-            cmd = {
-                "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles",
-                "DiffviewFocusFiles"
-            },
             config = get_setup("diffview")
         })
 
         use({
             "TimUntersberger/neogit",
-            requires = {"nvim-lua/plenary.nvim"},
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "sindrets/diffview.nvim",
+            },
             cmd = "Neogit",
             config = get_setup("neogit")
         })
@@ -136,11 +138,13 @@ return require("packer").startup({
         })
         -- nvim-dap-virtual-text
         -- nvim-dap-ui
-        use({ 
+        use({
             "rcarriga/nvim-dap-ui",
             requires = {"mfussenegger/nvim-dap"},
             config = get_setup("dap-ui")
         })
+
+        use('ntpeters/vim-better-whitespace')
 
         -- Autocompletion with LSP
         use({

@@ -1,5 +1,5 @@
 require("nvim-treesitter.configs").setup {
-    ensure_installed = "maintained",
+    ensure_installed = "all",
     highlight = {
         enable = true,
     },
@@ -11,14 +11,17 @@ require("nvim-treesitter.configs").setup {
     autotag = {
         enable = true,
     },
-    incremental_selection = {
-        enable = true,
-        keymaps = {
-            init_selection = "<CR>",
-            scope_incremental = "<CR>",
-            node_incremental = "<CR>",
-            node_decremental = "<BS>",
-        },
+    -- incremental_selection = {
+    --     enable = true,
+    --     keymaps = {
+    --         init_selection = "<CR>",
+    --         scope_incremental = "<CR>",
+    --         node_incremental = "<CR>",
+    --         node_decremental = "<BS>",
+    --     },
+    -- },
+    indent = {
+        enable = true
     },
 }
 
