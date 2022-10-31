@@ -3,5 +3,3 @@
 require("plugins")
 require("options")
 require("mappings")
-
-require('dap.ext.vscode').load_launchjs()

@@ -22,5 +22,25 @@ opt.swapfile = false
 opt.termguicolors = true
 opt.cc = "100"
 opt.wrap = false
--- opt.mouse = "a"
+opt.mouse = "a"
 opt.laststatus = 3
+
+vim.g._has_set_default_indent_settings = 1
+
+-- vim.g.material_style = "darker"
+-- vim.g.material_style = "deep ocean"
+-- require('onedark').setup {
+--     style = 'darker'
+-- }
+-- require('onedark').load()
+
+-- require('onedarkpro').setup {
+--     dark_theme = "onedark_dark"
+-- }
+-- require('onedarkpro').load()
+
+vim.g.tokyonight_style = 'night'
+vim.cmd[[colorscheme tokyonight]]
+
+-- vim.cmd[[colorscheme dracula]]
+

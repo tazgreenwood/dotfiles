@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+alias cloudsmith-login='echo ${CLOUDSMITH_TOKEN} | dart pub token add https://dart.cloudsmith.io/lendio/flutter_modules/'
 
 # Work Related Settings Lendio
 export NOVA_USERNAME=$(cat ~/dev/secrets/nova-username)
@@ -112,9 +113,12 @@ export NOVA_PASSWORD=$(cat ~/dev/secrets/nova-password)
 export GITHUB_TOKEN=$(cat ~/dev/docker-secrets/docker-git-token)
 export OAUTH_PRIVATE=$(cat ~/dev/docker-secrets/api-oauth-private.key)
 export OAUTH_PUBLIC=$(cat ~/dev/docker-secrets/api-oauth-public.key)
+export CLOUDSMITH_TOKEN=$(cat ~/dev/mobile-secrets/cloudsmith-token)
 export GOPATH="$HOME/go"
 export PATH='/Users/tazgreenwood/dev/lendio-infra/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 export PATH=$PATH:$GOPATH/bin
+export PATH="$PATH:$HOME/dev/flutter/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

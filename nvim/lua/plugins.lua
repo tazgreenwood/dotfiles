@@ -1,39 +1,42 @@
 vim.cmd([[
-	augroup packer_user_config
-		autocmd!
-		autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-	augroup end
+        augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+        augroup end
 ]])
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
+    packer_bootstrap = fn.system({
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
+        install_path,
+    })
 end
 vim.api.nvim_command("packadd packer.nvim")
 -- returns the require for use in `config` parameter of packer's use
 -- expects the name of the config file
 function get_setup(name)
-	return string.format('require("setup/%s")', name)
+    return string.format('require("setup/%s")', name)
 end
 
 return require("packer").startup({
-	function(use)
+    function(use)
 
-		use("wbthomason/packer.nvim")
+        use("wbthomason/packer.nvim")
 
-		use({ "kyazdani42/nvim-web-devicons" })
+        use({ "kyazdani42/nvim-web-devicons" })
 
-        use({ "tanvirtin/monokai.nvim", config = get_setup("monokai") })
-
-        -- use({ "dracula/vim" })
+        use('marko-cerovac/material.nvim')
+        use('navarasu/onedark.nvim')
+        use('olimorris/onedarkpro.nvim')
+        use('folke/tokyonight.nvim')
+        use('dracula/vim')
+        -- use({ "tanvirtin/monokai.nvim", config = get_setup("monokai") })
 
         use("p00f/nvim-ts-rainbow")
 
@@ -43,34 +46,42 @@ return require("packer").startup({
             run = ":TSUpdate",
         })
 
-		use({
-			"nvim-telescope/telescope.nvim",
-			requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}},
-			config = get_setup("telescope")
-		})
-
-		use ({
-			"nvim-lualine/lualine.nvim",
-			config = get_setup("lualine"),
-			event = "VimEnter",
-			requires = { "kyazdani42/nvim-web-devicons", opt = true },
-		})
+        use({
+            "nvim-telescope/telescope.nvim",
+            requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+            config = get_setup("telescope")
+        })
 
         use({
-            'kyazdani42/nvim-tree.lua',
-            requires = {
-              'kyazdani42/nvim-web-devicons', -- optional, for file icon
-            },
-            config = get_setup("nvim-tree")
+            "nvim-lualine/lualine.nvim",
+            config = get_setup("lualine"),
+            event = "VimEnter",
+            requires = { "kyazdani42/nvim-web-devicons", opt = true },
         })
+
+        -- using packer.nvim
+        use({
+            'akinsho/bufferline.nvim',
+            tag = "v2.*",
+            requires = 'kyazdani42/nvim-web-devicons',
+            config = get_setup("bufferline")
+        })
+
+        -- use({
+        --     'kyazdani42/nvim-tree.lua',
+        --     requires = {
+        --       'kyazdani42/nvim-web-devicons', -- optional, for file icon
+        --     },
+        --     config = get_setup("nvim-tree")
+        -- })
 
         use({ "windwp/nvim-autopairs", config = get_setup("autopairs") })
 
-        use({
-            "norcalli/nvim-colorizer.lua",
-            event = "BufReadPre",
-            config = get_setup("colorizer")
-        })
+        -- use({
+        --     "norcalli/nvim-colorizer.lua",
+        --     event = "BufReadPre",
+        --     config = get_setup("colorizer")
+        -- })
 
         use({ "terrortylor/nvim-comment", config = get_setup("nvim-comment")})
 
@@ -111,40 +122,23 @@ return require("packer").startup({
             config = get_setup("trouble")
         })
 
-        use({
-            "folke/todo-comments.nvim",
-            requires = "nvim-lua/plenary.nvim",
-            cmd = {"TodoTrouble", "TodoTelescope"},
-            event = "BufReadPost",
-            config = get_setup("todo")
-        })
+        -- use({
+        --     "folke/todo-comments.nvim",
+        --     requires = "nvim-lua/plenary.nvim",
+        --     cmd = {"TodoTrouble", "TodoTelescope"},
+        --     event = "BufReadPost",
+        --     config = get_setup("todo")
+        -- })
 
-        use({
-            "karb94/neoscroll.nvim",
-            keys = {"<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-e>", "zt", "zz", "zb"},
-            config = get_setup("neoscroll")
-        })
-
-        use({
-            'goolord/alpha-nvim',
-            requires = { 'kyazdani42/nvim-web-devicons' },
-            config = get_setup("alpha")
-        })
-
-        -- Debug setup
-        use({
-            "mfussenegger/nvim-dap",
-            config = get_setup("nvim-dap")
-        })
-        -- nvim-dap-virtual-text
-        -- nvim-dap-ui
-        use({
-            "rcarriga/nvim-dap-ui",
-            requires = {"mfussenegger/nvim-dap"},
-            config = get_setup("dap-ui")
-        })
+        -- use({
+        --     'goolord/alpha-nvim',
+        --     requires = { 'kyazdani42/nvim-web-devicons' },
+        --     config = get_setup("alpha")
+        -- })
 
         use('ntpeters/vim-better-whitespace')
+
+        use('tpope/vim-sleuth')
 
         -- Autocompletion with LSP
         use({
@@ -164,13 +158,13 @@ return require("packer").startup({
 
         use({ "neovim/nvim-lspconfig", config = get_setup("lsp") })
 
-		if packer_bootstrap then
-			require("packer").sync()
-		end
-	end,
-	config = {
-		display = {
-			open_fn = require("packer.util").float,
-		},
-	},
+        if packer_bootstrap then
+            require("packer").sync()
+        end
+    end,
+    config = {
+        display = {
+            open_fn = require("packer.util").float,
+        },
+    },
 })
