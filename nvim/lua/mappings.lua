@@ -11,6 +11,10 @@ vim.keymap.set("n", "<leader>fg", '<cmd>lua require("telescope.builtin").live_gr
 vim.keymap.set("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>')
 vim.keymap.set("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>')
 
+-- Bufferline Mappings
+vim.keymap.set("n", "gb", ":BufferLinePick<CR>", { silent = true, noremap = true })
+vim.keymap.set("n", "gD", ":BufferLinePickClose<CR>", { silent = true, noremap = true })
+
 -- Nvim Tree
 vim.keymap.set("n", "<leader>ft", ":NvimTreeToggle<CR>", { silent = true })
 vim.keymap.set("n", "<leader>fu", ":NvimTreeFindFile<CR>", { silent = true })

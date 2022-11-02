@@ -62,18 +62,26 @@ return require("packer").startup({
         -- using packer.nvim
         use({
             'akinsho/bufferline.nvim',
-            tag = "v2.*",
+            tag = "v3.*",
             requires = 'kyazdani42/nvim-web-devicons',
             config = get_setup("bufferline")
         })
 
-        -- use({
-        --     'kyazdani42/nvim-tree.lua',
-        --     requires = {
-        --       'kyazdani42/nvim-web-devicons', -- optional, for file icon
-        --     },
-        --     config = get_setup("nvim-tree")
-        -- })
+        use({
+            'kyazdani42/nvim-tree.lua',
+            requires = {
+              'kyazdani42/nvim-web-devicons', -- optional, for file icon
+            },
+            config = get_setup("nvim-tree")
+        })
+
+        use { "nvim-telescope/telescope-file-browser.nvim" }
+
+        -- I did like nvim-scrollbar but I want to try the codewindow for a bit
+        use {
+            'gorbit99/codewindow.nvim',
+            config = get_setup('codewindow')
+        }
 
         use({ "windwp/nvim-autopairs", config = get_setup("autopairs") })
 

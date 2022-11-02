@@ -21,6 +21,9 @@ require('telescope').setup{
     -- builtin picker
   },
   extensions = {
+    file_browser = {
+      hijack_netrw = true,
+    }
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
@@ -28,3 +31,5 @@ require('telescope').setup{
     -- please take a look at the readme of the extension you want to configure
   }
 }
+
+require('telescope').load_extension 'file_browser'
