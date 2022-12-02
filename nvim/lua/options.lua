@@ -17,7 +17,7 @@ opt.showmode = false
 opt.sidescrolloff = 8
 opt.signcolumn = "yes:1"
 opt.smartcase = true
--- opt.smartindent = true
+opt.smartindent = true
 opt.swapfile = false
 opt.termguicolors = true
 opt.cc = "100"
@@ -39,8 +39,19 @@ vim.g._has_set_default_indent_settings = 1
 -- }
 -- require('onedarkpro').load()
 
-vim.g.tokyonight_style = 'night'
-vim.cmd[[colorscheme tokyonight]]
+-- vim.g.tokyonight_style = 'night'
+-- vim.cmd[[colorscheme tokyonight]]
 
 -- vim.cmd[[colorscheme dracula]]
+
+require('nightfox').setup {
+    options = {
+        styles = {
+            comments = "italic",
+            keywords = "bold",
+            types = "italic,bold"
+        }
+    }
+}
+vim.cmd[[colorscheme carbonfox]]
 

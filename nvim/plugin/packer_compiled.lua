@@ -125,12 +125,6 @@ _G.packer_plugins = {
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  ["codewindow.nvim"] = {
-    config = { 'require("setup/codewindow")' },
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/codewindow.nvim",
-    url = "https://github.com/gorbit99/codewindow.nvim"
-  },
   ["diffview.nvim"] = {
     config = { 'require("setup/diffview")' },
     loaded = true,
@@ -181,6 +175,11 @@ _G.packer_plugins = {
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/opt/neogit",
     url = "https://github.com/TimUntersberger/neogit"
   },
+  ["nightfox.nvim"] = {
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
+    url = "https://github.com/EdenEast/nightfox.nvim"
+  },
   ["nvim-autopairs"] = {
     config = { 'require("setup/autopairs")' },
     loaded = true,
@@ -199,11 +198,22 @@ _G.packer_plugins = {
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
+  ["nvim-hlslens"] = {
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-hlslens",
+    url = "https://github.com/kevinhwang91/nvim-hlslens"
+  },
   ["nvim-lspconfig"] = {
     config = { 'require("setup/lsp")' },
     loaded = true,
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-scrollbar"] = {
+    config = { 'require("setup/scrollbar")' },
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
+    url = "https://github.com/petertriho/nvim-scrollbar"
   },
   ["nvim-tree.lua"] = {
     config = { 'require("setup/nvim-tree")' },
@@ -297,54 +307,54 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-require("setup/nvim-comment")
-time([[Config for nvim-comment]], false)
--- Config for: diffview.nvim
-time([[Config for diffview.nvim]], true)
-require("setup/diffview")
-time([[Config for diffview.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require("setup/lsp")
-time([[Config for nvim-lspconfig]], false)
 -- Config for: bufferline.nvim
 time([[Config for bufferline.nvim]], true)
 require("setup/bufferline")
 time([[Config for bufferline.nvim]], false)
--- Config for: git-blame.nvim
-time([[Config for git-blame.nvim]], true)
-require("setup/git-blame")
-time([[Config for git-blame.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require("setup/telescope")
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("setup/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 require("setup/autopairs")
 time([[Config for nvim-autopairs]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("setup/treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require("setup/cmp")
-time([[Config for nvim-cmp]], false)
--- Config for: codewindow.nvim
-time([[Config for codewindow.nvim]], true)
-require("setup/codewindow")
-time([[Config for codewindow.nvim]], false)
+-- Config for: diffview.nvim
+time([[Config for diffview.nvim]], true)
+require("setup/diffview")
+time([[Config for diffview.nvim]], false)
+-- Config for: nvim-scrollbar
+time([[Config for nvim-scrollbar]], true)
+require("setup/scrollbar")
+time([[Config for nvim-scrollbar]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+require("setup/nvim-comment")
+time([[Config for nvim-comment]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("setup/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require("setup/telescope")
+time([[Config for telescope.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 require("setup/trouble")
 time([[Config for trouble.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("setup/treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: git-blame.nvim
+time([[Config for git-blame.nvim]], true)
+require("setup/git-blame")
+time([[Config for git-blame.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require("setup/cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require("setup/lsp")
+time([[Config for nvim-lspconfig]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -356,7 +366,7 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'lualine.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'gitsigns.nvim', 'indent-blankline.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'indent-blankline.nvim', 'gitsigns.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

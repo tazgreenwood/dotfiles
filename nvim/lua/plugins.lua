@@ -36,6 +36,7 @@ return require("packer").startup({
         use('olimorris/onedarkpro.nvim')
         use('folke/tokyonight.nvim')
         use('dracula/vim')
+        use('EdenEast/nightfox.nvim')
         -- use({ "tanvirtin/monokai.nvim", config = get_setup("monokai") })
 
         use("p00f/nvim-ts-rainbow")
@@ -78,10 +79,18 @@ return require("packer").startup({
         use { "nvim-telescope/telescope-file-browser.nvim" }
 
         -- I did like nvim-scrollbar but I want to try the codewindow for a bit
-        use {
-            'gorbit99/codewindow.nvim',
-            config = get_setup('codewindow')
-        }
+        use({
+            'petertriho/nvim-scrollbar',
+            requires = {
+                'kevinhwang91/nvim-hlslens'
+            },
+            config = get_setup('scrollbar')
+        })
+
+        -- use {
+        --     'gorbit99/codewindow.nvim',
+        --     config = get_setup('codewindow')
+        -- }
 
         use({ "windwp/nvim-autopairs", config = get_setup("autopairs") })
 
