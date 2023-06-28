@@ -162,8 +162,8 @@ font:
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
   # offset:
-  #   x: 0
-  #   y: 0 
+    # x: 0
+    # y: 5 
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
@@ -185,8 +185,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#222222'
-    foreground: '#f7f1ff'
+    background: '#191919'
+    foreground: '#f7eeff'
 
     # Bright and dim foreground colors
     #
@@ -269,30 +269,30 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   selection:
-    text: CellForeground
-    background: '#bab6c0'
+    text: '#f7eeff'
+    background: '#2d2c2d'
 
   # Normal colors
   normal:
-    black:   '#363537'
-    red:     '#fc618d'
-    green:   '#7bd88f'
-    yellow:  '#fce566'
-    blue:    '#fd9353'
-    magenta: '#948ae3'
-    cyan:    '#5ad4e6'
-    white:   '#f7f1ff'
+    black:   '#191919'
+    red:     '#ff518c'
+    green:   '#53dc87'
+    yellow:  '#ffe648'
+    blue:    '#9685e6'
+    magenta: '#ff518c'
+    cyan:    '#00d7e9'
+    white:   '#bdbdbd'
 
   # Bright colors
   bright:
-    black:   '#69676c'
-    red:     '#fc618d'
-    green:   '#7bd88f'
-    yellow:  '#fce566'
-    blue:    '#948ae3'
-    magenta: '#fc618d'
-    cyan:    '#5ad4e6'
-    white:   '#f7f1ff'
+    black:   '#bdbdbd'
+    red:     '#ff518c'
+    green:   '#53dc87'
+    yellow:  '#ffe648'
+    blue:    '#9685e6'
+    magenta: '#ff518c'
+    cyan:    '#00d7e9'
+    white:   '#f7eeff'
 
   # Dim colors
   #

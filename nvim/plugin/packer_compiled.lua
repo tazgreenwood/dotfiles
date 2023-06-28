@@ -74,31 +74,20 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["bufferline.nvim"] = {
-    config = { 'require("setup/bufferline")' },
+  ["Comment.nvim"] = {
     loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
+  LuaSnip = {
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-calc"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/cmp-calc",
-    url = "https://github.com/hrsh7th/cmp-calc"
-  },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
-  ["cmp-emoji"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/cmp-emoji",
-    url = "https://github.com/hrsh7th/cmp-emoji"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -115,137 +104,71 @@ _G.packer_plugins = {
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-spell"] = {
+  cmp_luasnip = {
     loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/cmp-spell",
-    url = "https://github.com/f3fora/cmp-spell"
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["cmp-vsnip"] = {
+  ["friendly-snippets"] = {
     loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["diffview.nvim"] = {
-    config = { 'require("setup/diffview")' },
+  ["github-nvim-theme"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\28colorscheme github_dark\bcmd\bvim\0" },
     loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/diffview.nvim",
-    url = "https://github.com/sindrets/diffview.nvim"
-  },
-  ["git-blame.nvim"] = {
-    config = { 'require("setup/git-blame")' },
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
-    url = "https://github.com/f-person/git-blame.nvim"
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
-    config = { 'require("setup/gitsigns")' },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim",
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["indent-blankline.nvim"] = {
-    config = { 'require("setup/indent-blankline")' },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim",
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lsp-zero.nvim"] = {
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
   ["lualine.nvim"] = {
-    config = { 'require("setup/lualine")' },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["material.nvim"] = {
+  ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/material.nvim",
-    url = "https://github.com/marko-cerovac/material.nvim"
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
-  neogit = {
-    commands = { "Neogit" },
-    config = { 'require("setup/neogit")' },
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/opt/neogit",
-    url = "https://github.com/TimUntersberger/neogit"
-  },
-  ["nightfox.nvim"] = {
+  ["mason.nvim"] = {
     loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
-  },
-  ["nvim-autopairs"] = {
-    config = { 'require("setup/autopairs")' },
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   ["nvim-cmp"] = {
-    config = { 'require("setup/cmp")' },
     loaded = true,
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-comment"] = {
-    config = { 'require("setup/nvim-comment")' },
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-comment",
-    url = "https://github.com/terrortylor/nvim-comment"
-  },
-  ["nvim-hlslens"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-hlslens",
-    url = "https://github.com/kevinhwang91/nvim-hlslens"
-  },
   ["nvim-lspconfig"] = {
-    config = { 'require("setup/lsp")' },
     loaded = true,
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-scrollbar"] = {
-    config = { 'require("setup/scrollbar")' },
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-scrollbar",
-    url = "https://github.com/petertriho/nvim-scrollbar"
-  },
-  ["nvim-tree.lua"] = {
-    config = { 'require("setup/nvim-tree")' },
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
-    url = "https://github.com/kyazdani42/nvim-tree.lua"
-  },
   ["nvim-treesitter"] = {
-    config = { 'require("setup/treesitter")' },
     loaded = true,
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
-  },
-  ["onedarkpro.nvim"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
-    url = "https://github.com/olimorris/onedarkpro.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -257,118 +180,38 @@ _G.packer_plugins = {
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["popup.nvim"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/popup.nvim",
-    url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ["telescope-file-browser.nvim"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
-    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
-  },
   ["telescope.nvim"] = {
-    config = { 'require("setup/telescope")' },
     loaded = true,
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tokyonight.nvim"] = {
+  undotree = {
     loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["trouble.nvim"] = {
-    config = { 'require("setup/trouble")' },
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/trouble.nvim",
-    url = "https://github.com/folke/trouble.nvim"
-  },
-  vim = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/vim",
-    url = "https://github.com/dracula/vim"
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
   },
   ["vim-better-whitespace"] = {
     loaded = true,
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/vim-better-whitespace",
     url = "https://github.com/ntpeters/vim-better-whitespace"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-sleuth"] = {
     loaded = true,
     path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/vim-sleuth",
     url = "https://github.com/tpope/vim-sleuth"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/Users/tazgreenwood/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ",
-    url = "https://github.com/hrsh7th/vim-vsnip-integ"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require("setup/bufferline")
-time([[Config for bufferline.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require("setup/autopairs")
-time([[Config for nvim-autopairs]], false)
--- Config for: diffview.nvim
-time([[Config for diffview.nvim]], true)
-require("setup/diffview")
-time([[Config for diffview.nvim]], false)
--- Config for: nvim-scrollbar
-time([[Config for nvim-scrollbar]], true)
-require("setup/scrollbar")
-time([[Config for nvim-scrollbar]], false)
--- Config for: nvim-comment
-time([[Config for nvim-comment]], true)
-require("setup/nvim-comment")
-time([[Config for nvim-comment]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("setup/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require("setup/telescope")
-time([[Config for telescope.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require("setup/trouble")
-time([[Config for trouble.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("setup/treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: git-blame.nvim
-time([[Config for git-blame.nvim]], true)
-require("setup/git-blame")
-time([[Config for git-blame.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require("setup/cmp")
-time([[Config for nvim-cmp]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require("setup/lsp")
-time([[Config for nvim-lspconfig]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Neogit lua require("packer.load")({'neogit'}, { cmd = "Neogit", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Event lazy-loads
-time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'lualine.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'indent-blankline.nvim', 'gitsigns.nvim'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
-time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
+-- Config for: github-nvim-theme
+time([[Config for github-nvim-theme]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\28colorscheme github_dark\bcmd\bvim\0", "config", "github-nvim-theme")
+time([[Config for github-nvim-theme]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

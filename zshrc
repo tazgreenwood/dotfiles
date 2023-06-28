@@ -87,11 +87,12 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export VISUAL='nvim'
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -106,6 +107,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
 alias cloudsmith-login='echo ${CLOUDSMITH_TOKEN} | dart pub token add https://dart.cloudsmith.io/lendio/flutter_modules/'
+alias dc="docker compose"
+alias dps="docker ps | docker-color-output"
+alias dcps="docker compose ps | docker-color-output"
+alias di="docker images | docker-color-output"
+alias optimus-dev="mycli -h localhost -u root -P 9900 -D optimus"
+alias optimus-prod="mycli -h db-ro.production.lendio.net -u tgreenwood -p jGuaKZgnGYTQcBm -D optimus"
+
+function dce { docker compose exec -it "$1" sh; }
+export -f dce
 
 # Work Related Settings Lendio
 export NOVA_USERNAME=$(cat ~/dev/secrets/nova-username)
@@ -114,9 +124,8 @@ export GITHUB_TOKEN=$(cat ~/dev/docker-secrets/docker-git-token)
 export OAUTH_PRIVATE=$(cat ~/dev/docker-secrets/api-oauth-private.key)
 export OAUTH_PUBLIC=$(cat ~/dev/docker-secrets/api-oauth-public.key)
 export CLOUDSMITH_TOKEN=$(cat ~/dev/mobile-secrets/cloudsmith-token)
-export GOPATH="$HOME/go"
 export PATH='/Users/tazgreenwood/dev/lendio-infra/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-export PATH=$PATH:$GOPATH/bin
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/dev/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
