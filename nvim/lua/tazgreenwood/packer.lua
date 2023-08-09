@@ -21,23 +21,30 @@ require('packer').startup(function(use)
 	-- Colorschemes
 	use({
 		'projekt0n/github-nvim-theme',
-		config = function()
-			vim.cmd('colorscheme github_dark')
-		end
+		-- config = function()
+		-- 	vim.cmd('colorscheme github_dark')
+		-- end
 	})
 
 	use({
 		'dracula/vim',
-		-- config = function()
-		-- 	vim.cmd('colorscheme dracula')
-		-- end
+		config = function()
+			vim.cmd('colorscheme dracula')
+		end
 	})
 
 	use({
 		'loctvl842/monokai-pro.nvim',
-		-- config = function()
-		-- 	vim.cmd('colorscheme monokai-pro')
-		-- end
+		config = function()
+			vim.cmd('colorscheme monokai-pro-spectrum')
+		end
+	})
+
+	use({
+		'rose-pine/neovim',
+		config = function()
+			vim.cmd('colorscheme rose-pine')
+		end
 	})
 
 	-- Treesitter syntax highlighting
@@ -55,6 +62,12 @@ require('packer').startup(function(use)
 	-- Git Integrations
 	use('tpope/vim-fugitive')
 	use('lewis6991/gitsigns.nvim')
+	use {
+		'NeogitOrg/neogit',
+		requires = {
+			{ 'nvim-lua/plenary.nvim' },
+		}
+	}
 
 	-- Line commenter with "gc"
 	use('numToStr/Comment.nvim')

@@ -3,6 +3,9 @@ vim.g.mapleader = " "
 -- open file tree
 vim.keymap.set("n", "<leader>ft", vim.cmd.Ex)
 
+-- open neogit
+vim.keymap.set("n", "<leader>ng", vim.cmd.Neogit)
+
 -- move select lines up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
