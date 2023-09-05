@@ -114,8 +114,8 @@ alias di="docker images | docker-color-output"
 alias optimus-dev="mycli -h localhost -u root -P 9900 -D optimus"
 alias optimus-prod="mycli -h db-ro.production.lendio.net -u tgreenwood -p jGuaKZgnGYTQcBm -D optimus"
 
-function dce { docker compose exec -it "$1" sh; }
-export -f dce
+# function dce { docker compose exec -it "$1" sh; }
+# export -f dce
 
 # Work Related Settings Lendio
 export NOVA_USERNAME=$(cat ~/dev/secrets/nova-username)

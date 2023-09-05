@@ -5,9 +5,17 @@
       create: true
       path: nvim
 
+    ~/.config/themes:
+      create: true
+      path: themes
+
     ~/.config/alacritty:
       create: true
       path: alacritty
+
+    ~/.config/kitty:
+      create: true
+      path: kitty
 
     ~/.zshrc:
       create: true

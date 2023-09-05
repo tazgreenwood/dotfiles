@@ -69,8 +69,34 @@ require('packer').startup(function(use)
 		}
 	}
 
+	-- Database Explorer
+	use {
+		'tpope/vim-dadbod',
+		-- opt = true,
+		-- requires = {
+		-- 	'kristijanhusak/vim-dadbod-ui',
+		-- 	'kristijanhusak/vim-dadbod-completion'
+		-- },
+		-- config = function()
+		-- 	require('config.dadbod').setup()
+		-- end,
+		-- cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+	}
+
+	use {
+		'kristijanhusak/vim-dadbod-ui'
+	}
+	use {
+		'kristijanhusak/vim-dadbod-completion'
+	}
+
 	-- Line commenter with "gc"
 	use('numToStr/Comment.nvim')
+
+	-- Auto pairs
+	use {
+		'windwp/nvim-autopairs',
+	}
 
 	-- Fancier statusline
 	use('nvim-lualine/lualine.nvim')
