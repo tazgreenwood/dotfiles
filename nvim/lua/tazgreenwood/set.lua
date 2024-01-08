@@ -1,6 +1,9 @@
 -- Fat cursor
 vim.opt.guicursor = ""
 
+-- Cursor line
+vim.opt.cursorline = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 

@@ -106,7 +106,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
-alias cloudsmith-login='echo ${CLOUDSMITH_TOKEN} | dart pub token add https://dart.cloudsmith.io/lendio/flutter_modules/'
+# alias cloudsmith-login='echo ${CLOUDSMITH_TOKEN} | dart pub token add https://dart.cloudsmith.io/lendio/flutter_modules/'
 alias dc="docker compose"
 alias dps="docker ps | docker-color-output"
 alias dcps="docker compose ps | docker-color-output"
@@ -123,12 +123,19 @@ export NOVA_PASSWORD=$(cat ~/dev/secrets/nova-password)
 export GITHUB_TOKEN=$(cat ~/dev/docker-secrets/docker-git-token)
 export OAUTH_PRIVATE=$(cat ~/dev/docker-secrets/api-oauth-private.key)
 export OAUTH_PUBLIC=$(cat ~/dev/docker-secrets/api-oauth-public.key)
-export CLOUDSMITH_TOKEN=$(cat ~/dev/mobile-secrets/cloudsmith-token)
-export PATH='/Users/tazgreenwood/dev/lendio-infra/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$HOME/dev/flutter/bin"
+# export CLOUDSMITH_TOKEN=$(cat ~/dev/mobile-secrets/cloudsmith-token)
+# export PATH='/Users/tazgreenwood/dev/lendio-infra/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+# export PATH="$PATH:/usr/local/go/bin"
+# export PATH="$PATH:$HOME/dev/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun completions
+[ -s "/Users/taz.greenwood/.bun/_bun" ] && source "/Users/taz.greenwood/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

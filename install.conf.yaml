@@ -9,9 +9,9 @@
       create: true
       path: themes
 
-    ~/.config/alacritty:
+    ~/.config/tmux:
       create: true
-      path: alacritty
+      path: tmux
 
     ~/.config/kitty:
       create: true
